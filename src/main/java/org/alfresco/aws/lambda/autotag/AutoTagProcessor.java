@@ -65,8 +65,14 @@ public class AutoTagProcessor implements RequestHandler<CloudWatchEvent, String>
 
                 if (bucketName != null)
                 {
-                    tagS3Bucket(bucketName, userName);
-                    context.getLogger().log("Successfully tagged S3 bucket: " + bucketName);
+                    if (tagS3Bucket(bucketName, userName))
+                    {
+                        context.getLogger().log("Successfully tagged S3 bucket: " + bucketName);
+                    }
+                    else
+                    {
+                        context.getLogger().log("Skipped tagging bucket '" + bucketName + "' as it could not be found");
+                    }
                 }
             }
             else
@@ -171,12 +177,22 @@ public class AutoTagProcessor implements RequestHandler<CloudWatchEvent, String>
         ec2.createTags(createTagsRequest);
     }
 
-    protected void tagS3Bucket(String bucketName, String userName)
+    protected boolean tagS3Bucket(String bucketName, String userName)
     {
+        boolean tagged = false;
+
         AmazonS3 s3 = AmazonS3ClientBuilder.defaultClient();
-        TagSet ownerTagSet = new TagSet();
-        ownerTagSet.setTag(TAG_KEY_OWNER, userName);
-        BucketTaggingConfiguration taggingConfiguration = new BucketTaggingConfiguration().withTagSets(ownerTagSet);
-        s3.setBucketTaggingConfiguration(bucketName, taggingConfiguration);
+
+        // check bucket still exists (automated tests can create and delete them quickly!)
+        if (s3.doesBucketExist(bucketName))
+        {
+            TagSet ownerTagSet = new TagSet();
+            ownerTagSet.setTag(TAG_KEY_OWNER, userName);
+            BucketTaggingConfiguration taggingConfiguration = new BucketTaggingConfiguration().withTagSets(ownerTagSet);
+            s3.setBucketTaggingConfiguration(bucketName, taggingConfiguration);
+            tagged = true;
+        }
+
+        return tagged;
     }
 }
