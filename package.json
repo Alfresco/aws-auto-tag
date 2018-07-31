@@ -1,0 +1,32 @@
+{
+  "name": "auto-tag",
+  "version": "1.0.0",
+  "description": "Automatically applies tags to newly created resources",
+  "main": "auto-tag.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alfresco/aws-auto-tag.git"
+  },
+  "keywords": [
+    "alfresco",
+    "tag",
+    "ec2",
+    "s3",
+    "rds"
+  ],
+  "author": "Gavin Cornwell",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Alfresco/aws-auto-tag/issues"
+  },
+  "homepage": "https://github.com/Alfresco/aws-auto-tag#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.192.0"
+  }
+}

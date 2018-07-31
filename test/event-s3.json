@@ -1,0 +1,36 @@
+{
+    "eventVersion": "1.05",
+    "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "ABCDEFGHIJKLMNOPQRST",
+        "arn": "arn:aws:iam::222222222222:user/joe-bloggs",
+        "accountId": "222222222222",
+        "accessKeyId": "ABCDEFGHIJKLMNOPQRST",
+        "userName": "joe-bloggs",
+        "sessionContext": {
+            "attributes": {
+                "mfaAuthenticated": "false",
+                "creationDate": "2018-07-03T09:59:54Z"
+            }
+        },
+        "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2018-07-03T10:05:41Z",
+    "eventSource": "s3.amazonaws.com",
+    "eventName": "CreateBucket",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "10.0.0.1",
+    "userAgent": "signin.amazonaws.com",
+    "requestParameters": {
+        "bucketName": "this-is-a-long-unique-bucket-name"
+    },
+    "responseElements": null,
+    "additionalEventData": {
+        "vpcEndpointId": "vpce-abc123de"
+    },
+    "requestID": "EDC60FDB00EB7469",
+    "eventID": "b6cb7d63-0173-40ce-b7dd-665e87b36621",
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "222222222222",
+    "vpcEndpointId": "vpce-abc123de"
+}

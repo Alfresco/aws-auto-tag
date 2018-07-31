@@ -1,0 +1,253 @@
+{
+    "eventVersion": "1.05",
+    "userIdentity": {
+        "type": "IAMUser",
+        "principalId": "ABCDEFGHIJKLMNOPQRST",
+        "arn": "arn:aws:iam::222222222222:user/account-management-admin",
+        "accountId": "222222222222",
+        "accessKeyId": "ABCDEFGHIJKLMNOPQRST",
+        "userName": "joe-bloggs",
+        "sessionContext": {
+            "attributes": {
+                "mfaAuthenticated": "false",
+                "creationDate": "2018-07-03T09:59:54Z"
+            }
+        },
+        "invokedBy": "signin.amazonaws.com"
+    },
+    "eventTime": "2018-07-02T13:18:05Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "RunInstances",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "10.0.0.1",
+    "userAgent": "console.ec2.amazonaws.com",
+    "requestParameters": {
+        "instancesSet": {
+            "items": [
+                {
+                    "imageId": "ami-b70554c8",
+                    "minCount": 1,
+                    "maxCount": 1
+                }
+            ]
+        },
+        "groupSet": {
+            "items": [
+                {
+                    "groupId": "sg-abc123de"
+                }
+            ]
+        },
+        "instanceType": "t2.micro",
+        "blockDeviceMapping": {
+            "items": [
+                {
+                    "deviceName": "/dev/xvda",
+                    "ebs": {
+                        "volumeSize": 8,
+                        "deleteOnTermination": true,
+                        "volumeType": "gp2"
+                    }
+                }
+            ]
+        },
+        "monitoring": {
+            "enabled": false
+        },
+        "disableApiTermination": false,
+        "ebsOptimized": false,
+        "creditSpecification": {
+            "cpuCredits": "standard"
+        }
+    },
+    "responseElements": {
+        "requestId": "e72ced13-120a-41c3-a274-2a48d3f002d6",
+        "reservationId": "r-08fb60394e827d077",
+        "ownerId": "222222222222",
+        "groupSet": {},
+        "instancesSet": {
+            "items": [
+                {
+                    "instanceId": "i-abcd12345efghi678",
+                    "imageId": "ami-b70554c8",
+                    "instanceState": {
+                        "code": 0,
+                        "name": "pending"
+                    },
+                    "privateDnsName": "ip-172-0-0-1.ec2.internal",
+                    "amiLaunchIndex": 0,
+                    "productCodes": {},
+                    "instanceType": "t2.micro",
+                    "launchTime": 1530537485000,
+                    "placement": {
+                        "availabilityZone": "us-east-1d",
+                        "tenancy": "default"
+                    },
+                    "monitoring": {
+                        "state": "disabled"
+                    },
+                    "subnetId": "subnet-abc123de",
+                    "vpcId": "vpc-abc123de",
+                    "privateIpAddress": "172.0.0.1",
+                    "stateReason": {
+                        "code": "pending",
+                        "message": "pending"
+                    },
+                    "architecture": "x86_64",
+                    "rootDeviceType": "ebs",
+                    "rootDeviceName": "/dev/xvda",
+                    "blockDeviceMapping": {},
+                    "virtualizationType": "hvm",
+                    "hypervisor": "xen",
+                    "groupSet": {
+                        "items": [
+                            {
+                                "groupId": "sg-abc123de",
+                                "groupName": "default"
+                            }
+                        ]
+                    },
+                    "sourceDestCheck": true,
+                    "networkInterfaceSet": {
+                        "items": [
+                            {
+                                "networkInterfaceId": "eni-abcd12345efghi678",
+                                "subnetId": "subnet-abc123de",
+                                "vpcId": "vpc-abc123de",
+                                "ownerId": "222222222222",
+                                "status": "in-use",
+                                "macAddress": "00:00:00:00:00:00",
+                                "privateIpAddress": "172.0.0.1",
+                                "privateDnsName": "ip-172-0-0-1.ec2.internal",
+                                "sourceDestCheck": true,
+                                "groupSet": {
+                                    "items": [
+                                        {
+                                            "groupId": "sg-aa9c2ce2",
+                                            "groupName": "default"
+                                        }
+                                    ]
+                                },
+                                "attachment": {
+                                    "attachmentId": "eni-attach-08fb98814dbeb35b3",
+                                    "deviceIndex": 0,
+                                    "status": "attaching",
+                                    "attachTime": 1530537485000,
+                                    "deleteOnTermination": true
+                                },
+                                "privateIpAddressesSet": {
+                                    "item": [
+                                        {
+                                            "privateIpAddress": "172.0.0.1",
+                                            "privateDnsName": "ip-172-0-0-1.ec2.internal",
+                                            "primary": true
+                                        }
+                                    ]
+                                },
+                                "ipv6AddressesSet": {},
+                                "tagSet": {}
+                            }
+                        ]
+                    },
+                    "ebsOptimized": false,
+                    "cpuOptions": {
+                        "coreCount": 1,
+                        "threadsPerCore": 1
+                    }
+                },
+                {
+                    "instanceId": "i-efghi56789jklmn0",
+                    "imageId": "ami-b70554c8",
+                    "instanceState": {
+                        "code": 0,
+                        "name": "pending"
+                    },
+                    "privateDnsName": "ip-172-0-0-2.ec2.internal",
+                    "amiLaunchIndex": 0,
+                    "productCodes": {},
+                    "instanceType": "t2.micro",
+                    "launchTime": 1530537485000,
+                    "placement": {
+                        "availabilityZone": "us-east-1d",
+                        "tenancy": "default"
+                    },
+                    "monitoring": {
+                        "state": "disabled"
+                    },
+                    "subnetId": "subnet-abc123de",
+                    "vpcId": "vpc-abc123de",
+                    "privateIpAddress": "172.0.0.2",
+                    "stateReason": {
+                        "code": "pending",
+                        "message": "pending"
+                    },
+                    "architecture": "x86_64",
+                    "rootDeviceType": "ebs",
+                    "rootDeviceName": "/dev/xvda",
+                    "blockDeviceMapping": {},
+                    "virtualizationType": "hvm",
+                    "hypervisor": "xen",
+                    "groupSet": {
+                        "items": [
+                            {
+                                "groupId": "sg-abc123de",
+                                "groupName": "default"
+                            }
+                        ]
+                    },
+                    "sourceDestCheck": true,
+                    "networkInterfaceSet": {
+                        "items": [
+                            {
+                                "networkInterfaceId": "eni-efghi56789jklmn0",
+                                "subnetId": "subnet-abc123de",
+                                "vpcId": "vpc-abc123de",
+                                "ownerId": "222222222222",
+                                "status": "in-use",
+                                "macAddress": "00:00:00:00:00:00",
+                                "privateIpAddress": "172.0.0.2",
+                                "privateDnsName": "ip-172-0-0-2.ec2.internal",
+                                "sourceDestCheck": true,
+                                "groupSet": {
+                                    "items": [
+                                        {
+                                            "groupId": "sg-aa9c2ce2",
+                                            "groupName": "default"
+                                        }
+                                    ]
+                                },
+                                "attachment": {
+                                    "attachmentId": "eni-attach-08fb98814dbeb35b3",
+                                    "deviceIndex": 0,
+                                    "status": "attaching",
+                                    "attachTime": 1530537485000,
+                                    "deleteOnTermination": true
+                                },
+                                "privateIpAddressesSet": {
+                                    "item": [
+                                        {
+                                            "privateIpAddress": "172.0.0.2",
+                                            "privateDnsName": "ip-172-0-0-2.ec2.internal",
+                                            "primary": true
+                                        }
+                                    ]
+                                },
+                                "ipv6AddressesSet": {},
+                                "tagSet": {}
+                            }
+                        ]
+                    },
+                    "ebsOptimized": false,
+                    "cpuOptions": {
+                        "coreCount": 1,
+                        "threadsPerCore": 1
+                    }
+                }
+            ]
+        }
+    },
+    "requestID": "e72ced13-120a-41c3-a274-2a48d3f002d6",
+    "eventID": "75d03eb2-acae-4707-bcbd-be7beb695b9d",
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "222222222222"
+}

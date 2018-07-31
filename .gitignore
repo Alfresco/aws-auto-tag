@@ -24,9 +24,14 @@ target
 *.war
 *.ear
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# node files
+node_modules
+npm-debug.log
 
-hs_err_pid*
+# environment files
+.npmrc
+testEnv.sh
 
-# AWS
-cloud-formation-deploy.yaml
+# Build and deploy files
+*.zip
+deploy.yaml
