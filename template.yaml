@@ -1,0 +1,66 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: Deploys the AutoTag Lambda function
+
+Parameters:
+
+  LambdaLogLevel:
+    Type: String
+    Description: The log level for Lambda functions
+    Default: INFO
+    AllowedValues:
+      - ERROR
+      - WARN
+      - INFO
+      - DEBUG
+
+Globals:
+  Function:
+    Runtime: python3.8
+    MemorySize: 256
+    Timeout: 30
+    Environment:
+      Variables:
+        LOG_LEVEL: !Ref LambdaLogLevel
+    Tags:
+      Creator: Ops Experience Team
+      Owner: Ops Experience Team
+      Department: Engineering
+      Product: Shared Services
+      Purpose: AutoTag
+
+Resources:
+
+  ProcessEvents:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: src/event-processor
+      Handler: processor.lambda_handler
+      Description: Processes EC2 and S3 CloudTrial events
+      Policies:
+        - Version: "2012-10-17"
+          Statement:
+            - Sid: TagResourcesPermissions
+              Effect: Allow
+              Action:
+                - ec2:CreateTags
+                - s3:PutBucketTagging
+              Resource: "*"
+      Events:
+        EC2S3Events:
+          Type: EventBridgeRule
+          Description: Detects EC2 and S3 events on the default event bus
+          Properties:
+            Pattern:
+              source:
+                - aws.s3
+                - aws.ec2
+              detail-type:
+                - AWS API Call via CloudTrail
+              detail:
+                eventSource:
+                  - s3.amazonaws.com
+                  - ec2.amazonaws.com
+                eventName:
+                  - CreateBucket
+                  - RunInstances

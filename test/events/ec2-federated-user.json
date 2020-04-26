@@ -1,0 +1,180 @@
+{
+  "version": "0",
+  "id": "b6cb7d63-0173-40ce-b7dd-665e87b36621",
+  "detail-type": "AWS API Call via CloudTrail",
+  "source": "aws.ec2",
+  "account": "222222222222",
+  "time": "2018-07-03T10:05:41Z",
+  "region": "us-east-1",
+  "resources": [],
+  "detail": {
+    "eventVersion": "1.05",
+    "userIdentity": {
+      "type": "AssumedRole",
+      "principalId": "ABCDEFGHIJKLMNOPQRST:joe-bloggs@alfresco.com",
+      "arn": "arn:aws:sts::111111111111:assumed-role/AlfrescoPowerUser/joe-bloggs@alfresco.com",
+      "accountId": "111111111111",
+      "accessKeyId": "ABCDEFGHIJKLMNOPQRST",
+      "sessionContext": {
+        "attributes": {
+          "mfaAuthenticated": "false",
+          "creationDate": "2018-07-02T13:12:00Z"
+        },
+        "sessionIssuer": {
+          "type": "Role",
+          "principalId": "ABCDEFGHIJKLMNOPQRST",
+          "arn": "arn:aws:iam::111111111111:role/AlfrescoPowerUser",
+          "accountId": "222222222222",
+          "userName": "AlfrescoPowerUser"
+        }
+      }
+    },
+    "eventTime": "2018-07-02T13:18:05Z",
+    "eventSource": "ec2.amazonaws.com",
+    "eventName": "RunInstances",
+    "awsRegion": "us-east-1",
+    "sourceIPAddress": "10.0.0.1",
+    "userAgent": "console.ec2.amazonaws.com",
+    "requestParameters": {
+      "instancesSet": {
+        "items": [
+          {
+            "imageId": "ami-b70554c8",
+            "minCount": 1,
+            "maxCount": 1
+          }
+        ]
+      },
+      "groupSet": {
+        "items": [
+          {
+            "groupId": "sg-abc123de"
+          }
+        ]
+      },
+      "instanceType": "t2.micro",
+      "blockDeviceMapping": {
+        "items": [
+          {
+            "deviceName": "/dev/xvda",
+            "ebs": {
+              "volumeSize": 8,
+              "deleteOnTermination": true,
+              "volumeType": "gp2"
+            }
+          }
+        ]
+      },
+      "monitoring": {
+        "enabled": false
+      },
+      "disableApiTermination": false,
+      "ebsOptimized": false,
+      "creditSpecification": {
+        "cpuCredits": "standard"
+      }
+    },
+    "responseElements": {
+      "requestId": "e72ced13-120a-41c3-a274-2a48d3f002d6",
+      "reservationId": "r-08fb60394e827d077",
+      "ownerId": "222222222222",
+      "groupSet": {},
+      "instancesSet": {
+        "items": [
+          {
+            "instanceId": "i-abcd12345efghi678",
+            "imageId": "ami-b70554c8",
+            "instanceState": {
+              "code": 0,
+              "name": "pending"
+            },
+            "privateDnsName": "ip-172-0-0-1.ec2.internal",
+            "amiLaunchIndex": 0,
+            "productCodes": {},
+            "instanceType": "t2.micro",
+            "launchTime": 1530537485000,
+            "placement": {
+              "availabilityZone": "us-east-1d",
+              "tenancy": "default"
+            },
+            "monitoring": {
+              "state": "disabled"
+            },
+            "subnetId": "subnet-abc123de",
+            "vpcId": "vpc-abc123de",
+            "privateIpAddress": "172.0.0.1",
+            "stateReason": {
+              "code": "pending",
+              "message": "pending"
+            },
+            "architecture": "x86_64",
+            "rootDeviceType": "ebs",
+            "rootDeviceName": "/dev/xvda",
+            "blockDeviceMapping": {},
+            "virtualizationType": "hvm",
+            "hypervisor": "xen",
+            "groupSet": {
+              "items": [
+                {
+                  "groupId": "sg-abc123de",
+                  "groupName": "default"
+                }
+              ]
+            },
+            "sourceDestCheck": true,
+            "networkInterfaceSet": {
+              "items": [
+                {
+                  "networkInterfaceId": "eni-abcd12345efghi678",
+                  "subnetId": "subnet-abc123de",
+                  "vpcId": "vpc-abc123de",
+                  "ownerId": "222222222222",
+                  "status": "in-use",
+                  "macAddress": "00:00:00:00:00:00",
+                  "privateIpAddress": "172.0.0.1",
+                  "privateDnsName": "ip-172-31-81-137.ec2.internal",
+                  "sourceDestCheck": true,
+                  "groupSet": {
+                    "items": [
+                      {
+                        "groupId": "sg-aa9c2ce2",
+                        "groupName": "default"
+                      }
+                    ]
+                  },
+                  "attachment": {
+                    "attachmentId": "eni-attach-08fb98814dbeb35b3",
+                    "deviceIndex": 0,
+                    "status": "attaching",
+                    "attachTime": 1530537485000,
+                    "deleteOnTermination": true
+                  },
+                  "privateIpAddressesSet": {
+                    "item": [
+                      {
+                        "privateIpAddress": "172.0.0.1",
+                        "privateDnsName": "ip-172-0-0-1.ec2.internal",
+                        "primary": true
+                      }
+                    ]
+                  },
+                  "ipv6AddressesSet": {},
+                  "tagSet": {}
+                }
+              ]
+            },
+            "ebsOptimized": false,
+            "cpuOptions": {
+              "coreCount": 1,
+              "threadsPerCore": 1
+            }
+          }
+        ]
+      }
+    },
+    "requestID": "e72ced13-120a-41c3-a274-2a48d3f002d6",
+    "eventID": "75d03eb2-acae-4707-bcbd-be7beb695b9d",
+    "eventType": "AwsApiCall",
+    "recipientAccountId": "222222222222"
+  }
+}

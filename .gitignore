@@ -1,32 +1,23 @@
-*.class
-
 # Eclipse
-.classpath
-.settings
 .project
+.classpath
+.settings/
+workspace
 
 # Intellij
 .idea/
 *.iml
 *.iws
 
+# VS Code
+.vscode
+
 # Mac
 .DS_Store
 
-# Maven
-target
-*.log
-*.log.*
+# SAM
+.aws-sam
+samconfig.toml
 
-# Package Files #
-
-*.jar
-*.war
-*.ear
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-
-hs_err_pid*
-
-# AWS
-cloud-formation-deploy.yaml
+# Newman
+newman

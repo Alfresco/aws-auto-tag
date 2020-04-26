@@ -1,23 +1,22 @@
 # AutoTag
 
-This repository contains a CloudFormation template that creates a Lambda function 
-that is triggered by a CloudWatch rule listening for CloudTrail create events in the region.
+This repository contains a [SAM](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/what-is-sam.html) template that creates a Lambda function triggered by CloudTrail events. 
 
-Currently new EC2 instances and S3 buckets are tracked and tagged.  
+The function tags all new EC2 instances and S3 buckets with a `Creator` tag.
 
 ## Prerequisites
 
-Install and configure the AWS Command Line Interface by the following the instructions [here](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-set-up.html).
+CloudTrail must be activated for the region you are deploying to.
 
-CloudTrail must be actived for the region you are deploying to.
+Install and configure the SAM Command Line Interface by the following the instructions [here](https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-cli-install.html).
 
-CloudWatch Events must support the EC2 and S3 services in the region you are deploying to. 
+Install Python 3.8.
 
 ## Build & Deploy
 
-Use the following steps to build and deploy the stack.
+Use the following steps to manually build and deploy the stack.
 
-    mvn package
-    deploy [bucket-name] [stack-name]
-
-where **bucket-name** is the name of an existing S3 bucket to use for deployment and **stack-name** is the name to give the created CloudFormation stack.
+```bash
+sam build
+sam deploy --guided
+```
