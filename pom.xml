@@ -15,7 +15,7 @@
     <properties>
         <aws.sdk.version>1.11.103</aws.sdk.version>
         <aws.lambda.core.version>1.1.0</aws.lambda.core.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.1</junit.version>
     </properties>
 
     <dependencyManagement>
